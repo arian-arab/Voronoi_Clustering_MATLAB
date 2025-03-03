@@ -17,4 +17,5 @@ Here, number_of_points is set to 1000 as an example.
 ![untitled2](https://github.com/user-attachments/assets/fc349182-a9b8-43f2-a6de-61d1b3ebea4d)
 
 4) Cluster Detection: The remaining code identifies connected Voronoi cells and filters out clusters containing fewer than min_number_of_localizations cells. In this example, min_number_of_localizations is set to 5, ensuring that clusters with fewer than 5 cells are discarded.
+
 ![untitled3](https://github.com/user-attachments/assets/730bea5e-edef-4662-99e1-83d5d784a4c4)
