@@ -1,20 +1,13 @@
 clear;clc;close all
 %-------------input parameters for voronoi tesselation--------------%
+number_of_points = 1000; % number of scattered points to be constructed randomly
 minimum_number_of_cells_per_cluster = 5; %voronoi-cells will be identified as clusters if at leat M-many cells are connected
 area_threshold = 40; % threshold value on the voronoi-cells areas (percentile)
 
 
-%----------simulating gaussain scattered points in two dimensions--------
-number_of_gaussians = 2;
-for i = 1:number_of_gaussians
-    sigma = [rand(1) 0; 0 rand(1)];
-    mu = [rand(1)*10 rand(1)*10];
-    data{i}=mvnrnd(mu,sigma,200);
-end
-data = vertcat(data{:});
-x = data(:,1);
-y = data(:,2);
-clear number_of_gaussians i sigma mu data
+%----------simulating scattered points in two dimensions--------
+x = rand(number_of_points,1);
+y = rand(number_of_points,1);
 %-------------------------------------------------------------------
 
 vor = construct_voronoi_structure(x,y); % construct the voronoi object
