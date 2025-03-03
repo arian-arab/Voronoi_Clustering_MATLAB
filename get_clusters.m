@@ -15,7 +15,7 @@ for i = 1:number_of_points
             while size_two ~= size_one
                 size_one = length(seed_neighbors);
                 idx_all = unique(cell2mat(neighbors(seed_neighbors)));
-                if ~any(builtin('_ismemberhelper',idx_all,seed_neighbors))
+                if ~any(ismember(idx_all,seed_neighbors))
                     seed_neighbors = sort([idx_all;seed_neighbors]);
                 else
                     seed_neighbors = idx_all;
